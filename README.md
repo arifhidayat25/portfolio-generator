@@ -61,4 +61,4 @@ Kontribusi selalu diterima! Silakan buat *pull request* untuk perbaikan bug atau
 
 ---
 
-**© 2024 Portfolio Generator.** Dibuat oleh **Achmad Arif Hidayat** untuk membantu pengembangan karier.
+**© 2025 Portfolio Generator.** Dibuat oleh **Achmad Arif Hidayat** untuk membantu pengembangan karier.
