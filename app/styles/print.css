@@ -1,0 +1,31 @@
+/* Reset default browser styles for printing */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact; /* Ensures background colors are printed in Chrome */
+  print-color-adjust: exact; /* Standard property */
+}
+
+/* Define the A4 container */
+.a4-container {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0;
+  padding: 1cm; /* Margin inside the A4 page */
+  box-sizing: border-box;
+}
+
+/* Prevent elements from being cut between pages */
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+/* Hide elements that shouldn't be in the PDF */
+.pdf-hide {
+  display: none !important;
+}
