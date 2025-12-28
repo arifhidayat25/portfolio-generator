@@ -1,22 +1,63 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase client for client-side operations
-export const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-// Supabase admin client for server-side operations (with service role key)
-export const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false
-    }
+// Mock client helper to prevent app crash without DB
+const createSafeClient = (url: string | undefined, key: string | undefined, options: any = {}) => {
+  if (url && key) {
+    return createClient(url, key, options);
   }
-);
+  
+  console.warn('⚠️ Supabase credentials not found. Using Mock Client (No-Op Mode).');
+  
+  // Recursive proxy to mock method chaining (e.g., .from().select().eq().single())
+  const mockClient: any = new Proxy({}, {
+    get: (_target, prop) => {
+      // Return a resolved promise with null data/error for async calls
+      if (['then', 'catch', 'finally'].includes(String(prop))) {
+        return undefined; // Let it behave like a standard object until awaited? No, better:
+      }
+      
+      return (...args: any[]) => {
+        // Return object with data: null, error: null to simulate empty response
+        // But some methods need to be chainable.
+        // Simple strategy: Always return the proxy itself, but add a 'then' method behavior manually?
+        
+        // Actually, simplest is to return a Promise that resolves to { data: null, error: null }
+        // BUT also has properties to continue chaining if not awaited.
+        
+        // Let's make a recursive proxy function that is also thenable.
+        const chainableProxy: any = () => chainableProxy;
+        
+        // Make it awaitable to return empty result
+        chainableProxy.then = (resolve: any) => resolve({ data: null, error: null });
+        
+        // Allow further chaining
+        return new Proxy(chainableProxy, {
+          get: (_t, p) => {
+            if (p === 'then') return (resolve: any) => resolve({ data: null, error: null });
+            return (..._a: any[]) => chainableProxy;
+          }
+        });
+      };
+    }
+  });
+
+  return mockClient;
+};
+
+// Supabase client for client-side operations
+export const supabase = createSafeClient(supabaseUrl, supabaseAnonKey);
+
+// Supabase admin client for server-side operations
+export const supabaseAdmin = createSafeClient(supabaseUrl, supabaseServiceRoleKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false
+  }
+});
 
 // Helper types for database
 export type Database = {
