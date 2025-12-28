@@ -1,34 +1,30 @@
-@import "tailwindcss/preflight" layer(base);
-@import "tailwindcss/utilities" layer(utilities);
-
-
-@custom-variant dark (&:is(.dark *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: hsl(240 20% 99%);
-  --foreground: hsl(240 10% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(240 10% 10%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(240 10% 10%);
-  /* Updated to match Modern Template: #5a7cfd (Blue) & #1a2350 (Navy) */
-  --primary: hsl(227 98% 67%);
-  --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(230 30% 96%);
-  --secondary-foreground: hsl(230 51% 21%);
-  --muted: hsl(230 30% 96%);
-  --muted-foreground: hsl(230 20% 50%);
-  --accent: hsl(227 98% 97%);
-  --accent-foreground: hsl(230 51% 21%);
-  --destructive: hsl(0 75% 55%);
-  --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(230 20% 90%);
-  --input: hsl(230 20% 90%);
-  --ring: hsl(227 98% 67%);
+  --background: 240 20% 99%;
+  --foreground: 240 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 10%;
+  --primary: 227 98% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 230 30% 96%;
+  --secondary-foreground: 230 51% 21%;
+  --muted: 230 30% 96%;
+  --muted-foreground: 230 20% 50%;
+  --accent: 227 98% 97%;
+  --accent-foreground: 230 51% 21%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 230 20% 90%;
+  --input: 230 20% 90%;
+  --ring: 227 98% 67%;
   --radius: 0.75rem;
   
-  /* Modern gradients - Matching Template */
-  /* Blue #5a7cfd to Navy #1a2350 */
+  /* Modern gradients */
   --gradient-primary: linear-gradient(135deg, hsl(227 98% 67%) 0%, hsl(230 51% 21%) 100%);
   --gradient-secondary: linear-gradient(135deg, hsl(200 85% 60%) 0%, hsl(227 98% 67%) 100%);
   --gradient-accent: linear-gradient(135deg, hsl(227 98% 67%) 0%, hsl(280 85% 60%) 100%);
@@ -40,25 +36,25 @@
 }
 
 .dark {
-  --background: hsl(230 25% 8%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(230 25% 12%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(230 25% 12%);
-  --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(227 98% 67%);
-  --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(230 25% 18%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(230 25% 18%);
-  --muted-foreground: hsl(230 15% 60%);
-  --accent: hsl(230 30% 20%);
-  --accent-foreground: hsl(227 98% 75%);
-  --destructive: hsl(0 70% 45%);
-  --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(230 25% 20%);
-  --input: hsl(230 25% 20%);
-  --ring: hsl(227 98% 67%);
+  --background: 230 25% 8%;
+  --foreground: 0 0% 98%;
+  --card: 230 25% 12%;
+  --card-foreground: 0 0% 98%;
+  --popover: 230 25% 12%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 227 98% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 230 25% 18%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 230 25% 18%;
+  --muted-foreground: 230 15% 60%;
+  --accent: 230 30% 20%;
+  --accent-foreground: 227 98% 75%;
+  --destructive: 0 70% 45%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 230 25% 20%;
+  --input: 230 25% 20%;
+  --ring: 227 98% 67%;
   
   /* Dark mode gradients */
   --gradient-primary: linear-gradient(135deg, hsl(227 98% 62%) 0%, hsl(230 51% 35%) 100%);
@@ -231,45 +227,6 @@
     radial-gradient(at 80% 100%, hsla(250, 70%, 50%, 0.15) 0px, transparent 50%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
 /* Print Styles for A4 Paper */
 @media print {
   @page {
@@ -280,7 +237,6 @@
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-    color-adjust: exact !important;
   }
 
   html, body {
@@ -333,14 +289,6 @@
     padding: 8mm !important;
   }
 
-  /* Ensure backgrounds print - COMMENTED OUT DUE TO PARSING ERROR
-  .bg-\[#4338ca\],
-  .bg-\[#3730a3\],
-  .bg-\[#6366f1\]\/50 {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  } */
-
   /* Page break controls */
   .page-break-before {
     page-break-before: always;
@@ -387,4 +335,3 @@
   background: white;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
-
