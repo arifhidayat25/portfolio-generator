@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -332,13 +332,13 @@
     padding: 8mm !important;
   }
 
-  /* Ensure backgrounds print */
+  /* Ensure backgrounds print - COMMENTED OUT DUE TO PARSING ERROR
   .bg-\[#4338ca\],
   .bg-\[#3730a3\],
   .bg-\[#6366f1\]\/50 {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-  }
+  } */
 
   /* Page break controls */
   .page-break-before {
