@@ -23,15 +23,16 @@ export function MinimalistTemplate({ portfolio }: MinimalistTemplateProps) {
 
   return (
     <div 
-      id="portfolio-preview"
+      className="portfolio-print"
       style={{
-        width: '794px',
-        minHeight: '1123px',
+        width: '595px',
+        height: '842px',
         backgroundColor: 'white',
-        padding: '48px 60px',
+        padding: '36px 45px',
         fontFamily: 'Arial, sans-serif',
         color: colors.text,
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
 

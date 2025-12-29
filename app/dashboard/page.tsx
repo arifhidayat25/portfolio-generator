@@ -1,3 +1,13 @@
+// DISABLED - Static version (no dashboard functionality)
+// This page redirects to quick-generate since auth is disabled
+
+import { redirect } from 'next/navigation'
+
+export default function DashboardPage() {
+  redirect('/quick-generate')
+}
+
+/* ORIGINAL DASHBOARD PAGE - COMMENTED OUT FOR STATIC VERSION
 "use client"
 
 import { useEffect, useState } from 'react';
@@ -67,7 +77,6 @@ export default function DashboardPage() {
 
       if (error) throw error;
 
-      // Remove from state
       setPortfolios(portfolios.filter(p => p.id !== id));
     } catch (error) {
       console.error('Error deleting portfolio:', error);
@@ -84,7 +93,6 @@ export default function DashboardPage() {
 
       if (error) throw error;
 
-      // Update state
       setPortfolios(portfolios.map(p => 
         p.id === id ? { ...p, is_public: !currentStatus } : p
       ));
@@ -109,7 +117,6 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm dark:bg-gray-900/80">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -131,7 +138,6 @@ export default function DashboardPage() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -181,3 +187,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+*/

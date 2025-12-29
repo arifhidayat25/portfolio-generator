@@ -11,9 +11,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Plus, X, Eye, Download, Loader2 } from "lucide-react"
-import { PDFExporter } from "@/lib/pdf-export"
+import { Plus, X, Eye, Download, Loader2 } from "lucide-react"  
 import type { Portfolio, Experience, Education, Project, SocialLinks, Language } from "@/lib/portfolio"
+import { PDFExporter } from "@/lib/pdf-export"
 
 // Import template components
 import { MinimalistTemplate } from "@/components/templates/minimalist-template"

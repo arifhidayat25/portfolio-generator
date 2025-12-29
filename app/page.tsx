@@ -53,7 +53,7 @@ export default function HomePage() {
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Buat Portfolio
             <span className="block mt-2 bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Profesional
+              Anda
             </span>
             <span className="block text-4xl md:text-5xl mt-4 text-gray-600 dark:text-gray-300 font-medium">
               dalam Hitungan Menit
@@ -61,7 +61,7 @@ export default function HomePage() {
           </h1>
           
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-            Generator portofolio otomatis dengan tampilan modern dan responsif. Cukup isi data, portofolio langsung dibuat.
+            Generate portofolio otomatis dengan tampilan modern dan responsif. Cukup isi data, portofolio langsung dibuat.
           </p>
 
           {/* CTA Buttons */}

@@ -182,9 +182,9 @@ export function ModernTemplate({ portfolio }: ModernTemplateProps) {
                         <div 
                           style={{ 
                             height: '100%', 
-                            width: lang.level === 'Native' || lang.level === 'Fasih' ? '95%' : 
-                                   lang.level === 'Mahir' || lang.level === 'Advanced' ? '80%' : 
-                                   lang.level === 'Menengah' || lang.level === 'Intermediate' ? '60%' : '40%',
+                            width: lang.level === 'Native/Fluent' || lang.level === 'Native' || lang.level === 'Fasih' ? '95%' : 
+                                   lang.level === 'Advanced' || lang.level === 'Mahir' ? '75%' : 
+                                   lang.level === 'Intermediate' || lang.level === 'Menengah' ? '50%' : '25%',
                             background: 'linear-gradient(90deg, #dbeafe 0%, #bfdbfe 50%, #ffffff 100%)',
                             borderRadius: '10px'
                           }} 
@@ -301,7 +301,7 @@ export function ModernTemplate({ portfolio }: ModernTemplateProps) {
                      marginBottom: '10px'
                    }}
                 >
-                  DATA PRIBADI
+                  Tentang Saya
                 </div>
                 <div className="flex gap-3">
                    <div style={{ width: '4px', paddingTop: '6px', display: 'flex', justifyContent: 'center' }}>

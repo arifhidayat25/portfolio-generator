@@ -46,30 +46,29 @@ export function DarkTemplate({ portfolio }: DarkTemplateProps) {
 
   return (
     <div 
-      id="portfolio-preview"
       className="portfolio-print"
       style={{
-        width: '794px',
-        minHeight: '1123px',
+        width: '595px',
+        height: '842px',
         backgroundColor: colors.bg,
         color: colors.textGray,
         fontFamily: 'Arial, sans-serif',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
-        fontSize: '11px',
-        lineHeight: '1.5'
+        fontSize: '10px',
+        lineHeight: '1.4'
       }}
     >
       {/* Decorative Curves (SVG) */}
-      <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '200px', zIndex: 0 }}>
+      <div style={{ position: 'absolute', top: 0, right: 0, width: '280px', height: '140px', zIndex: 0 }}>
         <svg  viewBox="0 0 400 200" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
            <path d="M0,0 L400,0 L400,200 C200,100 100,50 0,0 Z" fill={colors.gold} opacity="0.8" />
            <path d="M50,0 L400,0 L400,150 C250,80 150,30 50,0 Z" fill="#b09540" opacity="0.5" />
         </svg>
       </div>
 
-       <div style={{ position: 'absolute', bottom: 0, left: 0, width: '300px', height: '150px', zIndex: 0 }}>
+       <div style={{ position: 'absolute', bottom: 0, left: 0, width: '200px', height: '100px', zIndex: 0 }}>
         <svg viewBox="0 0 300 150" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
            <path d="M0,150 L300,150 L0,0 C10,120 50,140 0,150 Z" fill={colors.gold} opacity="0.8" />
         </svg>
@@ -79,8 +78,8 @@ export function DarkTemplate({ portfolio }: DarkTemplateProps) {
       {/* LEFT COLUMN (SIDEBAR) */}
       <div style={{
         width: '32%',
-        padding: '30px 20px',
-        paddingTop: '30px',
+        padding: '20px 14px',
+        paddingTop: '24px',
         display: 'flex',
         flexDirection: 'column',
         zIndex: 1
@@ -151,16 +150,16 @@ export function DarkTemplate({ portfolio }: DarkTemplateProps) {
       {/* RIGHT COLUMN (MAIN CONTENT) */}
       <div style={{
         flex: 1,
-        padding: '50px 40px',
-        paddingRight: '30px',
+        padding: '35px 25px',
+        paddingRight: '20px',
         zIndex: 1,
         display: 'flex',
         flexDirection: 'column'
       }}>
          {/* Name Header */}
-         <div style={{ marginBottom: '40px', marginTop: '20px' }}>
+         <div style={{ marginBottom: '25px', marginTop: '12px' }}>
            <h1 style={{
-             fontSize: '32px',
+             fontSize: '24px',
              color: colors.textWhite,
              fontWeight: 'bold',
              letterSpacing: '1px',
@@ -198,26 +197,29 @@ export function DarkTemplate({ portfolio }: DarkTemplateProps) {
 
          {/* Sections Map */}
          
-         {/* TENTANG SAYA */}
-         {bio && (
-           <div style={{ marginBottom: '30px' }}>
-             <h2 style={{
-               fontSize: '14px',
-               color: colors.textWhite,
-               fontWeight: 'bold',
-               textTransform: 'uppercase',
-               borderBottom: `1px solid ${colors.gold}`,
-               paddingBottom: '8px',
-               marginBottom: '12px',
-               letterSpacing: '1px'
-             }}>
-               TENTANG SAYA
-             </h2>
-             <p style={{ margin: 0, textAlign: 'justify' }}>
-               {bio}
+         {/* DATA PRIBADI / TENTANG SAYA */}
+         <div style={{ marginBottom: '20px' }}>
+           <h2 style={{
+             fontSize: '11px',
+             color: colors.textWhite,
+             fontWeight: 'bold',
+             textTransform: 'uppercase',
+             borderBottom: `1px solid ${colors.gold}`,
+             paddingBottom: '6px',
+             marginBottom: '10px',
+             letterSpacing: '1px'
+           }}>
+             Tentang Saya
+           </h2>
+           <div style={{ display: 'flex', gap: '8px' }}>
+             <div style={{ width: '4px', paddingTop: '4px', display: 'flex', justifyContent: 'center' }}>
+               <div style={{ width: '5px', height: '5px', backgroundColor: colors.gold }} />
+             </div>
+             <p style={{ margin: 0, textAlign: 'justify', flex: 1 }}>
+               {bio || 'Saya adalah seorang profesional yang berdedikasi tinggi dan selalu ingin belajar hal baru dalam dunia kerja.'}
              </p>
            </div>
-         )}
+         </div>
 
          {/* PENDIDIKAN */}
          {education && education.length > 0 && (
